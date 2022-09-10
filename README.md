@@ -13,6 +13,8 @@ cp protoc-gen-go /usr/local/bin/
 cp protoc-gen-go-grpc /usr/local/bin/
 
 
+
+
 ```shell
 make  xxx
 -- run server
@@ -27,3 +29,5 @@ show service
 service  CalculatorService
 call xxx
 ```
+evans 
+https://github.com/ktr0731/evans
