@@ -4,9 +4,12 @@ import (
 	"go-grpc/greet/proto"
 	"log"
 	"net"
+	"time"
 
 	"google.golang.org/grpc"
 )
+
+var greetWithDeadlineTime time.Duration = 1 * time.Second
 
 var addr string = "0.0.0.0:50051"
 
