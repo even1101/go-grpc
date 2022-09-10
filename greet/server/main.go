@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 )
 
 var greetWithDeadlineTime time.Duration = 1 * time.Second
@@ -23,11 +24,25 @@ func main() {
 	if err != nil {
 		log.Fatal("failed to listen on: %v ", err)
 	}
+	opts := []grpc.ServerOption{}
 
-	s := grpc.NewServer()
+	tls := true // change that to true if needed
+	if tls {
+		certFile := "ssl/server.crt"
+		keyFile := "ssl/server.pem"
+		creds, err := credentials.NewServerTLSFromFile(certFile, keyFile)
+
+		if err != nil {
+			log.Fatalf("Failed loading certificates: %v\n", err)
+		}
+		opts = append(opts, grpc.Creds(creds))
+	}
+
+	s := grpc.NewServer(opts...)
 	proto.RegisterGreetServiceServer(s, &Server{})
 
-	if err = s.Serve(lis); err != nil {
-		log.Fatal("failed to server: g%v ", err)
+	defer s.Stop()
+	if err := s.Serve(lis); err != nil {
+		log.Fatalf("Failed to serve: %v\n", err)
 	}
 }

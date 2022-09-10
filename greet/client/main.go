@@ -13,7 +13,7 @@ import (
 var addr string = "localhost:50051"
 
 func main() {
-	tls := false // change that to true if needed
+	tls := true // change that to true if needed
 	opts := []grpc.DialOption{}
 
 	if tls {
