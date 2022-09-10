@@ -1,0 +1,16 @@
+// {
+//     "protoc": {
+//        // "path": "/usr/local/bin/protoc",
+//        // "path": "/opt/homebrew/opt/protobuf/bin",
+// 	   // protoc -I$@/${PROTO_DIR} --go_opt=module=${PACKAGE} --go_out=. --go-grpc_opt=module=${PACKAGE} --go-grpc_out=. $@/${PROTO_DIR}/*.proto --plugin=protoc-gen-go-grpc=/Users/even/go/bin
+//         "path": "/Users/even/go/bin",
+//         "compile_on_save": false,
+//         "options": [
+//             // "--proto_path=protos/v3",
+//             // "--proto_path=protos/v2",
+//             "--proto_path=${workspaceRoot}/greet/proto",
+//             "--proto_path=${env.GOPATH}/src",
+//             "--go_out=gen/go"
+//         ]
+//     }
+// }
