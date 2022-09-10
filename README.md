@@ -8,6 +8,6 @@ Please specify a program using absolute path or make sure the program is availab
 --go-grpc_out: protoc-gen-go-grpc: Plugin failed with status code 1.
 
 you can enter to cmd
-go to gopaht find protoc-gen-go and protoc-gen-go 
+cd to go path find protoc-gen-go and protoc-gen-go 
 cp protoc-gen-go /usr/local/bin/
 cp protoc-gen-go-grpc /usr/local/bin/
