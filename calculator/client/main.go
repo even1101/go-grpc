@@ -36,5 +36,7 @@ func main() {
 	defer conn.Close()
 	c := proto.NewCalculatorServiceClient(conn)
 
-	doSum(c)
+	// doSum(c)
+	// doPrimes(c)
+	doAvg(c)
 }
